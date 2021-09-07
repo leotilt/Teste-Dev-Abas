@@ -1,0 +1,19 @@
+{
+  "name": "teste-dev-abas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leotilt/Teste-Dev-Abas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leotilt/Teste-Dev-Abas/issues"
+  },
+  "homepage": "https://github.com/leotilt/Teste-Dev-Abas#readme"
+}
