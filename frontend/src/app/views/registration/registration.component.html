@@ -1,1 +1,21 @@
-<p>registration works!</p>
+<mat-card-content class="card-content">
+  <mat-card>
+    <form matForm>
+      <div class="form-group">
+        <label for="tipo">Banco</label>
+        <select class="form-control" id="banco">
+          <option *ngFor="let banco of bancos">{{ banco.fullName }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nome">Agencia</label>
+        <input type="number" class="form-control" required />
+      </div>
+      <div class="form-group">
+        <label for="nome">Conta</label>
+        <input type="number" class="form-control" required />
+      </div>
+      <input type="submit" class="btn btn-primary mt-4" value="Salvar" />
+    </form>
+  </mat-card>
+</mat-card-content>

@@ -21,7 +21,13 @@ import { BankListService } from 'src/components/template/service/bankList/bank-l
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+// Material Table
 import { MatTableModule } from '@angular/material/table'
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -42,6 +48,10 @@ import { MatTableModule } from '@angular/material/table'
     MatButtonModule,
     MatCardModule,
     MatTableModule,
+    ReactiveFormsModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatFormFieldModule,
   ],
   providers: [HttpClientModule, BankListService ],
   bootstrap: [AppComponent],
