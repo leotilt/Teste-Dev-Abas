@@ -1,9 +1,17 @@
 <mat-card class="home mat-elevation-z2">
   <mat-card-title class="title">Inicio</mat-card-title>
-  <button mat-icon-button color="accent" matTooltip="Excluir Tudo" class="btn-delete" (click)="clearLocalStorage()">
+  <div *ngIf="isConta" class="isConta">
+    <h3 style="text-align: center">Nenhuma conta cadastrada</h3>
+  </div>
+  <button
+    mat-icon-button
+    color="accent"
+    matTooltip="Excluir Tudo"
+    class="btn-delete"
+    (click)="clearLocalStorage()"
+  >
     <mat-icon>delete</mat-icon>
   </button>
-  
 </mat-card>
 <div class="mat-elevation-z8">
   <table mat-table matSort [dataSource]="data">
@@ -18,7 +26,7 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Agência</th>
       <td mat-cell *matCellDef="let element">{{ element.agencia }}</td>
     </ng-container>
-
+    <!-- Conta Column -->
     <ng-container matColumnDef="conta">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Conta</th>
       <td mat-cell *matCellDef="let element">{{ element.conta }}</td>

@@ -16,12 +16,21 @@ export class HomeComponent implements OnInit {
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
 
   data!: Form[];
-  itemDelete: any;
-
+  isConta?: boolean;
   constructor(private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.readLocalStorage();
+    this.hidden();
+    console.log(this.data);
+  }
+
+  hidden() {
+    if (this.data == null) {
+      this.isConta = true;
+    } else if (this.data != null) {
+      this.isConta = false;
+    }
   }
 
   clearLocalStorage() {
