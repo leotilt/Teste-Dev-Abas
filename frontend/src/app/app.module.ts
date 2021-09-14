@@ -1,3 +1,4 @@
+//Angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,13 +19,16 @@ import { BankListService } from 'src/components/template/service/bankList/bank-l
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-// Material Table
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 //Forms
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -46,9 +50,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatTableModule,
     ReactiveFormsModule,
+    FormsModule,
     MatPaginatorModule,
     MatSortModule,
     MatFormFieldModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatSnackBarModule,
   ],
   providers: [HttpClientModule, BankListService],
   bootstrap: [AppComponent],
