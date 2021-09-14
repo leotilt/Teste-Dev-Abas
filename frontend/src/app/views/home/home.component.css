@@ -11,3 +11,23 @@
   left: 10px;
   background-color: rgb(228, 215, 226);
 }
+
+table {
+  width: 100%;
+}
+.list {
+  top: 2px;
+}
+.list .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.btn-delete {
+  margin-top: -35px;
+  float: right;
+}
+.clear{
+  margin-top:-20px;
+  float:right
+}
