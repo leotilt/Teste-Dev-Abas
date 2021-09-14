@@ -3,8 +3,8 @@
     <form [formGroup]="formGroup" (ngSubmit)="onSave()">
       <div>
         <label for="tipo" style="padding-right: 6px">Banco</label>
-        <select formControlName="banco" [(ngModel)]="mySelect" (change)="selectChange(mySelect.value)" >
-          <option [value]="banco.fullName" *ngFor="let banco of bancos">
+        <select formControlName="banco">
+          <option *ngFor="let banco of bancos" [value]="banco.fullName">
             {{ banco.fullName }}
           </option>
         </select>
