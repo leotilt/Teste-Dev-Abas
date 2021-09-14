@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Bancos } from 'src/components/models/bancos';
 import { Form } from 'src/components/models/form';
 import { BankListService } from 'src/components/template/service/bankList/bank-list.service';
@@ -10,16 +11,16 @@ import { BankListService } from 'src/components/template/service/bankList/bank-l
   styleUrls: ['./registration.component.css'],
 })
 export class RegistrationComponent implements OnInit {
-  formGroup: any;
+  formGroup!: FormGroup;
 
   bancos!: Bancos[];
-  form!: Form[];
+  form: any = [];
 
-  constructor(private bankListService: BankListService) {}
+  constructor(
+    private bankListService: BankListService,
+    private snackBar: MatSnackBar
+  ) {}
   ngOnInit(): void {
-    JSON.parse(localStorage.getItem('form-data') as string) || [];
-    this.form = [];
-    this.bancos = [];
     this.getListBanks();
     this.getForm();
   }
@@ -33,9 +34,16 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSave() {
-    const formulario: Form = this.formGroup.value;
-    this.form.push(formulario);
-    localStorage.setItem('form-data', JSON.stringify(this.form));
+    const formParse =
+      JSON.parse(localStorage.getItem('form-data') as string) || [];
+    formParse.push(this.formGroup.value);
+    localStorage.setItem('form-data', JSON.stringify(formParse));
+
+    this.snackBar.open('Conta cadastrada com sucesso ', 'X', {
+      duration: 2000,
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
+    });
     this.formGroup.reset();
   }
 
