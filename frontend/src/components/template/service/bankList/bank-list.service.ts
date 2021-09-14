@@ -10,7 +10,6 @@ export class BankListService {
   constructor(private http: HttpClient) {}
 
   getBanks(): Observable<Bancos[]> {
-    return this.http.get<Bancos[]>('https://brasilapi.com.br/api/banks/v1')
-    
+    return this.http.get<Bancos[]>('https://brasilapi.com.br/api/banks/v1');
   }
 }

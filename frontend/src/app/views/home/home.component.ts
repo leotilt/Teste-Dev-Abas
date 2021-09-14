@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.readLocalStorage();
     this.hidden();
-    console.log(this.data);
   }
 
   hidden() {

@@ -20,6 +20,7 @@ export class RegistrationComponent implements OnInit {
     private bankListService: BankListService,
     private snackBar: MatSnackBar
   ) {}
+
   ngOnInit(): void {
     this.getListBanks();
     this.getForm();
@@ -53,7 +54,11 @@ export class RegistrationComponent implements OnInit {
         this.bancos = bancos;
       },
       (err) => {
-        console.log('erro ao listar os bancos', err);
+        this.snackBar.open('Erro ao pegar listas de bancos' + err, 'X', {
+          duration: 2000,
+          horizontalPosition: 'right',
+          verticalPosition: 'bottom',
+        });
       }
     );
   }
