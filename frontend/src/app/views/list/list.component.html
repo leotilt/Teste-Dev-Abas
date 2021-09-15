@@ -1,13 +1,13 @@
 <mat-card class="list mat-elevation-z2">
-  <mat-card-title class="title" >Lista de bancos</mat-card-title>
-
+  <mat-card-title class="title">Lista de bancos</mat-card-title>
 </mat-card>
 
+<div class="filter">
+  <mat-label class="t-filter">Pesquisar Banco</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="" #input />
+</div>
 <div class="mat-elevation-z8">
-  <!-- <input   keyup="applyFilter($event.target.value)"/> -->
-  
-
-  <table mat-table matSort [dataSource]="ListasBancos">
+  <table mat-table matSort [dataSource]="dataSource">
     <!-- Código do Banco Column -->
     <ng-container matColumnDef="code">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Código</th>
@@ -24,10 +24,6 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 
-  <mat-paginator
-    [pageSizeOptions]="[5, 10, 20, 30, 40, 50, 60]"
-    showFirstLastButtons
-    aria-label="Select page of periodic elements"
-  >
+  <mat-paginator [pageSizeOptions]="[5, 10]" showFirstLastButtons>
   </mat-paginator>
 </div>
