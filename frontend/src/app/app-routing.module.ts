@@ -5,12 +5,12 @@ import { ListComponent } from './views/list/list.component';
 import { RegistrationComponent } from './views/registration/registration.component';
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   component: HomeComponent,
+  // },
   {
     path: '',
-    component: HomeComponent,
-  },
-  {
-    path: 'registration',
     component: RegistrationComponent,
   },
   {
