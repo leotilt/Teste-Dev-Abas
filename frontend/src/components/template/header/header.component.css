@@ -1,7 +1,7 @@
 .header {
   display: flex;
   align-items: center;
-  background-color: rgb(228, 215, 226);
+  background-color: #e4d7e2;
   color: black;
 }
 
@@ -23,9 +23,11 @@
 .header .title-group i {
   padding-right: 5px;
 }
+
 .header .btn-group {
   display: flex;
 }
+
 .header .nav-bar {
   display: flex;
   align-items: center;
