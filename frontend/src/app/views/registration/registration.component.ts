@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Bancos } from 'src/components/models/bancos';
-import { Form } from 'src/components/models/form';
 import { BankListService } from 'src/components/template/service/bankList/bank-list.service';
-
+import { UtilService } from 'src/components/template/service/utils/util.service';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -18,7 +16,7 @@ export class RegistrationComponent implements OnInit {
 
   constructor(
     private bankListService: BankListService,
-    private snackBar: MatSnackBar
+    private utils: UtilService
   ) {}
 
   ngOnInit(): void {
@@ -35,17 +33,16 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSave() {
+    this.saveOnLocalStorage();
+    this.utils.showMessage('Conta cadastrada com sucesso!!!');
+    this.formGroup.reset();
+  }
+
+  saveOnLocalStorage() {
     const formParse =
       JSON.parse(localStorage.getItem('form-data') as string) || [];
     formParse.push(this.formGroup.value);
     localStorage.setItem('form-data', JSON.stringify(formParse));
-
-    this.snackBar.open('Conta cadastrada com sucesso ', 'X', {
-      duration: 2000,
-      horizontalPosition: 'right',
-      verticalPosition: 'bottom',
-    });
-    this.formGroup.reset();
   }
 
   getListBanks() {
@@ -54,11 +51,7 @@ export class RegistrationComponent implements OnInit {
         this.bancos = bancos;
       },
       (err) => {
-        this.snackBar.open('Erro ao pegar listas de bancos' + err, 'X', {
-          duration: 2000,
-          horizontalPosition: 'right',
-          verticalPosition: 'bottom',
-        });
+        this.utils.errorMessage('Erro ao Listar bancos' + err);
       }
     );
   }

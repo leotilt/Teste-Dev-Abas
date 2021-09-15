@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { Form } from 'src/components/models/form';
+import { UtilService } from 'src/components/template/service/utils/util.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   data!: Form[];
   isConta?: boolean;
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private utils: UtilService) {}
 
   ngOnInit(): void {
     this.readLocalStorage();
@@ -32,15 +32,17 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  deleteAllValues() {
+    this.clearLocalStorage();
+  }
+
   clearLocalStorage() {
     if (confirm('Tem certeza que deseja deletar todas as contas?')) {
       localStorage.clear();
+      this.utils.showMessage('Todas as contas foram deletadas com sucesso');
       window.location.reload();
-      this.snackBar.open('Todas as contas deletadas com sucesso', 'X', {
-        duration: 2000,
-        horizontalPosition: 'right',
-        verticalPosition: 'bottom',
-      });
+    } else {
+      this.utils.showMessage('Nenhum dado foi apagado');
     }
   }
 

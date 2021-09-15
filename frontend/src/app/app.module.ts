@@ -15,6 +15,7 @@ import { RegistrationComponent } from './views/registration/registration.compone
 import { ListComponent } from './views/list/list.component';
 //Service
 import { BankListService } from 'src/components/template/service/bankList/bank-list.service';
+import { UtilService } from 'src/components/template/service/utils/util.service';
 //Material Module
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -25,7 +26,6 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 //Forms
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -58,7 +58,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatTooltipModule,
     MatSnackBarModule,
   ],
-  providers: [HttpClientModule, BankListService],
+  providers: [HttpClientModule, BankListService, UtilService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
