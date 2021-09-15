@@ -9,3 +9,11 @@ table {
   font-weight: bold;
   text-align: center;
 }
+.filter {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 14px;
+}
+.t-filter{ 
+  padding-right: 10px;
+}
