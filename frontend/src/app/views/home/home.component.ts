@@ -9,6 +9,7 @@ import { UtilService } from 'src/components/template/service/utils/util.service'
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
+
 export class HomeComponent implements OnInit {
   displayedColumns: string[] = ['banco', 'agencia', 'conta'];
 
