@@ -1,5 +1,5 @@
-<mat-card class="home mat-elevation-z2">
-  <mat-card-title class="title">Início</mat-card-title>
+<mat-card class="home mat-elevation-z1">
+  <mat-card-title class="title">Contas Cadastradas</mat-card-title>
   <div *ngIf="isConta">
     <h3 style="text-align: center">Nenhuma conta cadastrada</h3>
   </div>
@@ -35,7 +35,6 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
-
   <mat-paginator
     [pageSizeOptions]="[5, 10, 20, 30]"
     showFirstLastButtons

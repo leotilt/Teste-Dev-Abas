@@ -34,8 +34,8 @@ export class RegistrationComponent implements OnInit {
 
   onSave() {
     this.saveOnLocalStorage();
-    this.utils.showMessage('Conta cadastrada com sucesso!!!');
     this.formGroup.reset();
+    window.location.reload();
   }
 
   saveOnLocalStorage() {
